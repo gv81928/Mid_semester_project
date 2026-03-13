@@ -2,13 +2,6 @@
 
 This project implements a modular multi-agent Agentic RAG pipeline where a coordinator routes each query to specialized retrieval agents, executes retrieval in parallel, and synthesizes the final response through an Ollama-powered LLM layer (with a deterministic fallback).
 
-The architecture follows your described workflow:
-
-1. Query submission to a coordinator/retrieval router agent.
-2. Delegation to specialized retrieval agents by intent.
-3. Parallel tool execution across heterogeneous sources.
-4. Integration and synthesis into one coherent answer.
-5. Output generation with citations and debug trace.
 
 ## System Architecture
 
@@ -174,21 +167,3 @@ PYTHONPATH=src python -m multi_agent_rag.app --query "Recommend products for car
   - `OLLAMA_TIMEOUT_SECONDS`
 
 If Ollama is down or times out, the system automatically returns a deterministic synthesized response instead of failing.
-
-## Extending to Production
-
-- Replace SQLite with PostgreSQL/MySQL adapters in `TextToSQLTool`.
-- Swap in production vector DBs (FAISS, Pinecone, Weaviate, Milvus) behind `SemanticRetrievalAgent`.
-- Replace `WebSearchTool` with enterprise APIs or curated connectors.
-- Add alternate provider adapters in `LLMSynthesizer` (OpenAI, Azure OpenAI, Anthropic) if needed.
-- Add guardrails:
-  - SQL query validation and allowlists.
-  - Source trust scoring.
-  - Hallucination checks and citation verification.
-  - Agent-level retries, timeouts, and circuit breakers.
-
-## Notes
-
-- The system is intentionally modular: each agent and tool can be independently replaced.
-- Retrieval is parallelized for better latency across heterogeneous data sources.
-- The current implementation is a practical template for coursework and prototyping.
