@@ -1,0 +1,26 @@
+[
+  {
+    "id": "itm-001",
+    "name": "Deep Work Notebook",
+    "description": "A focus planner designed for weekly execution.",
+    "tags": ["productivity", "books"]
+  },
+  {
+    "id": "itm-002",
+    "name": "Practical LLM Systems",
+    "description": "A handbook for production AI and RAG engineering.",
+    "tags": ["ai", "books"]
+  },
+  {
+    "id": "itm-003",
+    "name": "Ergo Mechanical Keyboard",
+    "description": "Low-fatigue keyboard for long coding sessions.",
+    "tags": ["hardware", "productivity", "gaming"]
+  },
+  {
+    "id": "itm-004",
+    "name": "Visual Thinking Cards",
+    "description": "Prompt cards for ideation and design strategy.",
+    "tags": ["design"]
+  }
+]

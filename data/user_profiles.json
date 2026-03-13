@@ -1,0 +1,14 @@
+[
+  {
+    "user_id": "alice",
+    "interests": ["books", "ai", "productivity"]
+  },
+  {
+    "user_id": "bob",
+    "interests": ["gaming", "hardware", "productivity"]
+  },
+  {
+    "user_id": "carol",
+    "interests": ["design", "books", "wellness"]
+  }
+]

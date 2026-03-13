@@ -1,0 +1,17 @@
+[
+  {
+    "source": "internal_handbook.pdf#page=12",
+    "content": "Our return policy allows replacement within 30 days if original invoice is provided.",
+    "metadata": {"domain": "policy"}
+  },
+  {
+    "source": "engineering_playbook.md",
+    "content": "Agentic systems should separate planning, retrieval, and synthesis for reliability.",
+    "metadata": {"domain": "engineering"}
+  },
+  {
+    "source": "security_guide.pdf#page=7",
+    "content": "Never expose API keys in client-side applications. Use secure server-side vaulting.",
+    "metadata": {"domain": "security"}
+  }
+]

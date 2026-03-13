@@ -1,0 +1,17 @@
+[
+  {
+    "source": "knowledge_base/article_44",
+    "content": "RAG quality improves when retrieval sources are diverse and ranked by confidence.",
+    "metadata": {"domain": "rag"}
+  },
+  {
+    "source": "book_chapter_3",
+    "content": "Parallel tool calls reduce latency in multi-agent pipelines handling heterogeneous data.",
+    "metadata": {"domain": "architecture"}
+  },
+  {
+    "source": "ops_notes_2026_03",
+    "content": "SQL retrieval is best for transactional facts like totals, counts, and historical orders.",
+    "metadata": {"domain": "operations"}
+  }
+]
