@@ -3,6 +3,7 @@ from __future__ import annotations
 import time
 
 from ..models import AgentOutput, RetrievalResult, UserQuery
+from ..tools.code_search_tool import CodeSearchTool
 from ..tools.vector_search_tool import InMemoryVectorSearch
 from .base import RetrievalAgent
 
@@ -10,16 +11,18 @@ from .base import RetrievalAgent
 class SemanticRetrievalAgent(RetrievalAgent):
     name = "semantic"
 
-    def __init__(self, docs_x_file: str, docs_y_file: str) -> None:
+    def __init__(self, docs_x_file: str, docs_y_file: str, code_dir: str) -> None:
         self.vector_x = InMemoryVectorSearch(docs_x_file)
         self.vector_y = InMemoryVectorSearch(docs_y_file)
+        self.code_search = CodeSearchTool(code_dir)
 
     def retrieve(self, query: UserQuery) -> AgentOutput:
         start = time.perf_counter()
         try:
             x_hits = self.vector_x.search(query.text, top_k=3)
             y_hits = self.vector_y.search(query.text, top_k=3)
-            all_hits = sorted(x_hits + y_hits, key=lambda h: h["score"], reverse=True)
+            code_hits = self.code_search.search(query.text, top_k=3)
+            all_hits = sorted(x_hits + y_hits + code_hits, key=lambda h: h["score"], reverse=True)
             results = [
                 RetrievalResult(
                     agent=self.name,

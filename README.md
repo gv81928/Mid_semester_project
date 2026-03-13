@@ -2,7 +2,6 @@
 
 This project implements a modular multi-agent Agentic RAG pipeline where a coordinator routes each query to specialized retrieval agents, executes retrieval in parallel, and synthesizes the final response through an Ollama-powered LLM layer (with a deterministic fallback).
 
-
 ## System Architecture
 
 - Coordinator Agent (`RetrievalRouterAgent`):
@@ -156,6 +155,24 @@ PYTHONPATH=src python -m multi_agent_rag.app --query "Find latest updates on vec
 PYTHONPATH=src python -m multi_agent_rag.app --query "Show customer alice orders from database" --user-id alice
 PYTHONPATH=src python -m multi_agent_rag.app --query "Recommend products for carol based on profile" --user-id carol
 ```
+
+## Code Q&A Corpus (for RAG analysis)
+
+The project includes sample code files that the semantic retriever can analyze:
+
+- `data/code_examples/auth_service.py`
+- `data/code_examples/pricing_engine.py`
+- `data/code_examples/order_service.py`
+
+Ask code-focused questions such as:
+
+```bash
+PYTHONPATH=src python -m multi_agent_rag.app --query "How does AuthService validate token signatures?"
+PYTHONPATH=src python -m multi_agent_rag.app --query "What discount logic does PricingEngine use?"
+PYTHONPATH=src python -m multi_agent_rag.app --query "How does OrderService compute gross and net totals?"
+```
+
+These queries are routed to semantic retrieval, which includes local code search over `data/code_examples`.
 
 ## Ollama Integration
 

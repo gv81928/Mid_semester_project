@@ -25,6 +25,7 @@ class MultiAgentRAGSystem:
             "semantic": SemanticRetrievalAgent(
                 str(data_path / "docs_x.json"),
                 str(data_path / "docs_y.json"),
+                str(data_path / "code_examples"),
             ),
             "web": WebRetrievalAgent(),
             "recommendation": RecommendationRetrievalAgent(

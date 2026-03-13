@@ -24,7 +24,29 @@ class RetrievalRouterAgent:
         "customer",
         "revenue",
     }
-    SEMANTIC_KEYWORDS = {"pdf", "document", "manual", "policy", "book", "record", "semantic"}
+    SEMANTIC_KEYWORDS = {
+        "pdf",
+        "document",
+        "manual",
+        "policy",
+        "book",
+        "record",
+        "semantic",
+        "code",
+        "function",
+        "class",
+        "method",
+        "module",
+        "python",
+        "implementation",
+        "logic",
+        "service",
+        "token",
+        "signature",
+        "validate",
+        "authentication",
+        "authorize",
+    }
     WEB_KEYWORDS = {"latest", "today", "news", "current", "web", "online", "real-time", "api"}
     RECO_KEYWORDS = {"recommend", "suggest", "best", "next", "profile", "preference"}
 
